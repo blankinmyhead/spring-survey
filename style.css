@@ -1,0 +1,149 @@
+@import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+body {
+    font-family: 'Galmuri9', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f8f8f8;
+}
+
+#start-screen {
+    background-color: transparent !important;
+    background: url("img\\배경.png") no-repeat center center; 
+    background-size: cover;
+
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+
+#restart-button, #start-button, #question-text, #result-title, #result-description, #answer-buttons button {
+    font-family: 'Galmuri11', sans-serif !important;
+    font-size: 18px;
+}
+
+/* 오른쪽 아래에 고정된 ▶ 버튼 >> QR 코드 이미지 뜨게 하기 */
+#view-jpg-button {
+  font-family: 'Galmuri11';
+  position: static;
+  margin-left: 10px;
+  display: inline-block;
+  z-index: 9999;
+  padding: 10px 15px;
+  font-size: 18px;
+}
+
+.result-buttons {
+  display: flex;
+  justify-content: center; 
+  gap: 10px;   
+  margin-top: 20px;  
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+
+    border-radius: 10px; 
+
+    /* 색 변화 */
+    transition: background-color 0.2s ease, color 0.4s ease;
+}
+
+/* 마우스를 올렸을 때 */
+button:hover {
+    background-color: #ffd1d1;
+    color: #000000;      
+}
+
+#answer-buttons button {
+    display: block;
+    width: 100%;
+}
+#question-number {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#question-text{
+  font-size: 35px;
+  white-space: pre-line;
+}
+
+#result-description {
+    white-space: pre-wrap; /* or pre-line */
+    font-size: 18px;
+  }
+
+/* 애니메이션 효과 아래>위 (start 화면 h1이랑 result 화면 h2에 적용함함 */
+#start-screen h1 {
+    opacity: 0;                      
+    animation: fadeInUp 0.7s ease forwards;
+    font-size:60px;
+    color: #1f1f2e;
+}
+
+#result-screen h2 {
+  opacity: 0;                      
+  animation: fadeInUp 0.7s ease forwards;
+  
+  background-color: #1c1b1e; 
+  color: #fff;
+  padding: 10px;        
+  border-radius: 8px; 
+  font-size: 35px;
+}
+
+/* 이미지/카운트다운 화면 중앙에 E띄우기!*/
+#image-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  background-color: white;
+  border: 2px solid #ccc;
+  padding: 20px;
+  z-index: 10000;
+  text-align: center;
+  border-radius: 30px;
+}
+
+#countdown {
+  font-size: 20px;   /* 원하는 크기로 설정 */
+  margin-top: 10px;  /* 위쪽 여백을 조금 주고 싶다면 */
+  text-align: center;/* 중앙 정렬하고 싶다면 */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards; 
+}

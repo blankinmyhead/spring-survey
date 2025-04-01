@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퍼스널 벚꽃 찾기</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen">
+            <h1>퍼스널 벚꽃 찾기</h1>
+            <button id="start-button">테스트 시작하기</button>
+        </div>
+        <div id="question-screen" style="display: none;">
+            <div id="question-number"></div> <h2 id="question-text"></h2>
+            <div id="answer-buttons"></div>
+        </div>
+        
+        <div id="result-screen" style="display: none;">
+            <h2 id="result-title"></h2>
+            <img id="result-image" src="" alt="이미지 로딩 실패" style="max-width: 250px;">
+            <p id="result-description"></p>
+            
+            <div class="result-buttons">
+                <button id="restart-button">다시 하기</button>
+                <button id="view-jpg-button" style="display: none;">결과 저장하기 ▶</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="image-modal" style="display: none;">
+        <button id="close-modal" style="position: absolute; top: 10px; right: 10px;">X</button>
+        <img id="title-specific-image" src="" alt="결과 이미지" style="max-width: 600px;">
+        <p id="countdown"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
